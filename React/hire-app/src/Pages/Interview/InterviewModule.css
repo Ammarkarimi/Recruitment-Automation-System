@@ -1,0 +1,164 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto; /* Allow scrolling globally */
+}
+
+
+.interview-fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Single User Fullscreen View */
+.video-fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 80%;
+  width: 100%;
+}
+
+.video-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Two-User View */
+.two-user-view {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.user-video {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+.user-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e1e; /* Dark background for bot section */
+  border-right: 2px solid #ccc;
+  position: relative;
+}
+
+.bot-image {
+  width: 60%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 50%;
+  background-color: #333;
+  padding: 10px;
+}
+
+.user-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e1e; /* Dark background for user section */
+  border-left: 2px solid #ccc;
+}
+
+
+/* Icons */
+.icon-left,
+.icon-right {
+  position: absolute;
+  top: 95%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.icon-left {
+  left: 500px;
+}
+
+.icon-right {
+  right: 500px;
+}
+
+/* Button */
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4e6cf0;
+  color: white;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #3d4fa1;
+}
+
+
+/* Style for the button */
+.speak-btn {
+  background-color: #4e6cf0; /* Blue background */
+  color: white;              /* White text */
+  border: none;              /* No border */
+  padding: 12px 24px;        /* Padding for height and width */
+  font-size: 16px;           /* Font size for text */
+  font-weight: bold;         /* Bold text for better visibility */
+  cursor: pointer;          /* Cursor change to pointer */
+  border-radius: 8px;        /* Rounded corners */
+  display: inline-flex;      /* Inline flex to align items (icon and text) */
+  align-items: center;       /* Center the icon and text vertically */
+  justify-content: center;   /* Center the icon and text horizontally */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for 3D effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.speak-btn i {
+  margin-right: 8px; /* Add space between icon and text */
+  font-size: 18px;   /* Icon size */
+}
+
+.speak-btn:hover {
+  background-color: #2b45b6; /* Darker blue on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+}
+
+.speak-btn:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Blue border on focus */
+}
+
+.speak-btn:active {
+  transform: scale(0.98); /* Slight scale down when the button is clicked */
+}

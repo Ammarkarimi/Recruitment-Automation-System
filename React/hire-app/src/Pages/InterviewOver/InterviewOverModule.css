@@ -1,0 +1,15 @@
+.interview-over {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f8f9fa; /* Optional: light background for better contrast */
+  }
+  
+  .interview-over h1 {
+    color: #4e6cf0; /* Blue color */
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold;
+    text-align: center;
+  }
+  

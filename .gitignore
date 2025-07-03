@@ -1,0 +1,54 @@
+# =========================
+# General
+# =========================
+*.zip
+*.csv
+*.log
+.DS_Store
+Thumbs.db
+
+# =========================
+# VS Code settings
+# =========================
+.vscode/
+
+# =========================
+# Python / Flask
+# =========================
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Optional Flask files
+Flask/*.sqlite3
+Flask/*.db
+Flask/instance/
+Flask/.env
+Flask/.flaskenv
+
+# Test/coverage
+# Ignore only specific subfolders:
+Flask/venv/Lib/site-packages/
+Flask/venv/Include/some-third-party/
+Flask/venv/Scripts
+Flask/venv/Include/site
+Flask/venv/pyvenv.cfg
+
+# =========================
+# React / Node (frontend)
+# =========================
+React/hire-app/node_modules/
+React/hire-app/build/
+React/hire-app/dist/
+React/hire-app/.env
+React/hire-app/.eslintcache
+React/hire-app/coverage/
+
+
+# Lock files (optional, if using only one lock strategy)
+React/hire-app/yarn.lock
+React/hire-app/package-lock.json
+React/hire-app/pnpm-lock.yaml
