@@ -21,12 +21,10 @@ An AI-powered full-stack application that automates the recruitment process usin
 | Layer      | Technology                          |
 |------------|-------------------------------------|
 | Frontend   | React.js                            |
-| Backend    | Flask (Python)                      |
+| Backend    | Flask                               |
 | ML/AI      | scikit-learn, pandas, NLTK          |
 | Email      | Google OAuth                        |
 | GenAI Model| Gemini 1.5 Flash                    |
-| Database   | (Optional) SQLite / PostgreSQL      |
-| Deployment | (Optional) Docker / Heroku / Vercel |
 
 ---
 
