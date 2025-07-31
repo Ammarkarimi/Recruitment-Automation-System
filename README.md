@@ -3,7 +3,10 @@
 An AI-powered full-stack application that automates the recruitment process using machine learning, natural language processing and Generative AI. It streamlines resume screening, candidate analysis, AI driven test, and AI interview using a combination of **Flask** (backend) and **React** (frontend).
 
 ---
+## 🎥 Demo Video
+🔗 [Click here to watch the demo](https://drive.google.com/file/d/1RVsJ96t_CYDnzQ9Z_ZtRqtROlh0naSlq/view?usp=sharing)
 
+---
 ## 🚀 Features
 
 - ✅ Resume similarity analysis
@@ -84,10 +87,6 @@ REACT_APP_GOOGLE_CLIENT_ID=your-client-id
 REACT_APP_BACKEND_URL=http://localhost:5000
 ```
 🔒 Do not commit these files — ensure .env is listed in .gitignore.
-
-
-## 🎥 Demo Video
-🔗 [Click here to watch the demo](https://drive.google.com/file/d/1RVsJ96t_CYDnzQ9Z_ZtRqtROlh0naSlq/view?usp=sharing)
 
 
 ## 👨‍💻 Developed By
