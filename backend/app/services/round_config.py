@@ -154,6 +154,7 @@ def _validate(round_type, config):
     if round_type == "resume_screening":
         if not isinstance(config["required_skills"], list):
             raise ApiError("required_skills must be a list")
+        config["required_skills"] = [str(s).strip() for s in config["required_skills"] if str(s).strip()]
         _num(config, "skill_weight", 0, 1)
         return
     _num(config, "duration_minutes", 1, 600)

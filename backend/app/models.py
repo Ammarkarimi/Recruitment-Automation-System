@@ -58,7 +58,7 @@ class Drive(db.Model):
     skills = db.Column(db.JSON, default=list)
     location = db.Column(db.String(255), default="")
     status = db.Column(db.String(20), default="active")  # draft | active | closed
-    created_by = db.Column(db.Integer, db.ForeignKey("user.id"))
+    created_by = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="SET NULL"))
     created_at = db.Column(db.DateTime, default=utcnow)
     updated_at = db.Column(db.DateTime, default=utcnow, onupdate=utcnow)
 

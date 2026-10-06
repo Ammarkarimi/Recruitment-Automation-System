@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+.mono {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+pre.problem {
+  white-space: pre-wrap;
+  font-family: inherit;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.code-editor {
+  width: 100%;
+  min-height: 360px;
+  resize: vertical;
+  border: 1px solid #d0d4e4;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 4;
+  background: #0f172a;
+  color: #e2e8f0;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.code-editor:focus {
+  border-color: #4f46e5;
 }

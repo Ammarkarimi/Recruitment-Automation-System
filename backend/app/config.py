@@ -35,6 +35,8 @@ class Config:
 
     UPLOAD_DIR = _resolve(os.getenv("UPLOAD_DIR", "uploads"))
     FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000").rstrip("/")
+    # If this folder contains a React production build, Flask serves it at "/".
+    FRONTEND_BUILD_DIR = _resolve(os.getenv("FRONTEND_BUILD_DIR", "../React/hire-app/build"))
     CORS_ORIGINS = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",") if o.strip()]
     JWT_EXPIRES_HOURS = int(os.getenv("JWT_EXPIRES_HOURS", "12"))
 

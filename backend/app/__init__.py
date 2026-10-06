@@ -2,7 +2,7 @@ import logging
 import os
 
 from dotenv import load_dotenv
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
@@ -13,7 +13,7 @@ from .extensions import db  # noqa: E402
 
 
 def create_app(config_object=Config, **overrides):
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder=None)  # "/static" belongs to the React build
     app.config.from_object(config_object)
     app.config.update(overrides)
     os.makedirs(app.config["UPLOAD_DIR"], exist_ok=True)
@@ -36,6 +36,8 @@ def create_app(config_object=Config, **overrides):
     def health():
         return jsonify({"status": "ok"})
 
+    _serve_frontend(app)
+
     with app.app_context():
         db.create_all()
     _restrict_permissions(app)
@@ -54,3 +56,19 @@ def _restrict_permissions(app):
             os.chmod(path, 0o700 if os.path.isdir(path) else 0o600)
         except OSError:
             pass
+
+
+def _serve_frontend(app):
+    """Serve the built React app (npm run build) from Flask, so one process can host everything."""
+    build_dir = app.config.get("FRONTEND_BUILD_DIR")
+    if not build_dir or not os.path.isfile(os.path.join(build_dir, "index.html")):
+        return
+
+    @app.get("/", defaults={"path": ""})
+    @app.get("/<path:path>")
+    def spa(path):
+        if path.startswith("api/"):
+            return jsonify({"error": "Not found"}), 404
+        if path and os.path.isfile(os.path.join(build_dir, path)):
+            return send_from_directory(build_dir, path)
+        return send_from_directory(build_dir, "index.html")

@@ -11,7 +11,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   const handleLearnMoreClick = () => {
-    navigate("/job_description"); // Navigate to job description on button click
+    navigate("/register");
   };
 
   return (
@@ -59,6 +59,12 @@ export default function LandingPage() {
               onClick={() => document.getElementById('contactus')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Contact Us
+            </button>
+            <button
+              className="inline-flex items-center bg-white text-indigo-500 font-bold text-xl border-0 py-2 px-6 rounded focus:outline-none hover:bg-indigo-100"
+              onClick={() => navigate("/login")}
+            >
+              Sign in
             </button>
           </nav>
         </div>
@@ -187,7 +193,7 @@ export default function LandingPage() {
                     onClick={handleLearnMoreClick}
                     className="inline-flex items-center bg-indigo-500 text-white border-0 py-2 px-6 focus:outline-none hover:bg-white hover:text-indigo-500 rounded text-lg transition-all duration-300 ease-in-out"
                 >
-                    Click for Demo
+                    Get started - it's free
                 </button>
 
                 </div>
