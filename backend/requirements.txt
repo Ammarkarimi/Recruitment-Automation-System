@@ -1,0 +1,13 @@
+Flask>=3.0
+Flask-SQLAlchemy>=3.1
+Flask-Cors>=4.0
+PyJWT>=2.8
+openpyxl>=3.1
+pypdf>=4.0
+python-dotenv>=1.0
+# Optional: AI question generation / answer evaluation with Gemini
+google-genai>=1.0
+# Production server
+gunicorn>=22.0
+# Tests
+pytest>=8.0

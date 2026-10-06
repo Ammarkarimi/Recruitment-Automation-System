@@ -52,3 +52,11 @@ React/hire-app/coverage/
 React/hire-app/yarn.lock
 React/hire-app/package-lock.json
 React/hire-app/pnpm-lock.yaml
+
+# New backend
+backend/.env
+backend/instance/
+backend/uploads/
+backend/.venv/
+backend/venv/
+.pytest_cache/
